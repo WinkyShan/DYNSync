@@ -1,0 +1,1 @@
+../../../../../DYNSync/Models/Entities/DSProviderRegistrationTransactionEntity+CoreDataClass.h

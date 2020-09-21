@@ -1,0 +1,1 @@
+../../../../../DYNSync/Models/Derivation Paths/DSMasternodeHoldingsDerivationPath+Protected.h

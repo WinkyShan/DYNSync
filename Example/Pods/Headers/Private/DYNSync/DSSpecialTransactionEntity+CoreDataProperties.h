@@ -1,0 +1,1 @@
+../../../../../DYNSync/Models/Entities/DSSpecialTransactionEntity+CoreDataProperties.h
