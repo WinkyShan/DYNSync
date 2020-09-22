@@ -1,5 +1,5 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CMNAlertController" "${PODS_ROOT}/Headers/Public/CocoaLumberjack" "${PODS_ROOT}/Headers/Public/DSDynamicOptions" "${PODS_ROOT}/Headers/Public/DYNSync" "${PODS_ROOT}/Headers/Public/KVO-MVVM" "${PODS_ROOT}/Headers/Public/TinyCborObjc" "${PODS_ROOT}/Headers/Public/bls-signatures-pod" "${PODS_ROOT}/Headers/Public/ios-dpp" "${PODS_ROOT}/Headers/Public/secp256k1_dash" "${PODS_ROOT}/Headers/Public/tinycbor"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CocoaLumberjack" "${PODS_ROOT}/Headers/Public/DSDynamicOptions" "${PODS_ROOT}/Headers/Public/DYNAlertController" "${PODS_ROOT}/Headers/Public/DYNSync" "${PODS_ROOT}/Headers/Public/KVO-MVVM" "${PODS_ROOT}/Headers/Public/TinyCborObjc" "${PODS_ROOT}/Headers/Public/bls-signatures-pod" "${PODS_ROOT}/Headers/Public/ios-dpp" "${PODS_ROOT}/Headers/Public/secp256k1_dash" "${PODS_ROOT}/Headers/Public/tinycbor"
 OTHER_LDFLAGS = $(inherited) -l"bz2" -l"c++" -l"sqlite3" -framework "BackgroundTasks" -framework "CoreData" -framework "Foundation" -framework "SystemConfiguration" -framework "UIKit"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F10DA04D55B3A64CDB8A28F62B80C571"
-               BuildableName = "libCMNAlertController.a"
-               BlueprintName = "CMNAlertController"
+               BlueprintIdentifier = "3D3F15BD078E0BC0A8135E1A3B8A28FC"
+               BuildableName = "libDYNAlertController.a"
+               BlueprintName = "DYNAlertController"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
