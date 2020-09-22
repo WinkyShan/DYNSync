@@ -9,7 +9,7 @@
 "\n\n     amount %@ (%@)" = "\n\n    částka %1$@ (%2$@)";
 
 /* No comment provided by engineer. */
-"\nADDRESS ALREADY USED\nDash addresses are intended for single use only\n\nre-use reduces privacy for both you and the recipient and can result in loss if the recipient doesn't directly control the address" = "\nPOUŽITÁ ADRESA\nCMN adresy jsou určené k jednomu použití\n\nOpětovné použití snižuje vaše i soukromí příjemce a může vést ke ztrátě pokud příjemce nemá přimou kontrolu nad adresou.";
+"\nADDRESS ALREADY USED\nDash addresses are intended for single use only\n\nre-use reduces privacy for both you and the recipient and can result in loss if the recipient doesn't directly control the address" = "\nPOUŽITÁ ADRESA\nDYN adresy jsou určené k jednomu použití\n\nOpětovné použití snižuje vaše i soukromí příjemce a může vést ke ztrátě pokud příjemce nemá přimou kontrolu nad adresou.";
 
 /* No comment provided by engineer. */
 "\nnetwork fee +%@ (%@)" = "\npoplatek síti +%1$@ (%2$@)";

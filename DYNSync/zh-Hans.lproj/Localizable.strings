@@ -9,7 +9,7 @@
 "\n\n     amount %@ (%@)" = "\n\n      金额%1$@ (%2$@)";
 
 /* No comment provided by engineer. */
-"\nADDRESS ALREADY USED\nDash addresses are intended for single use only\n\nre-use reduces privacy for both you and the recipient and can result in loss if the recipient doesn't directly control the address" = "\nADDRESS ALREADY USED\nCMN 地址仅供一次性使用\n\n重复使用会降低您和收件人的隐私，如果收件人无法直接控制地址，则可能导致资产丢失";
+"\nADDRESS ALREADY USED\nDash addresses are intended for single use only\n\nre-use reduces privacy for both you and the recipient and can result in loss if the recipient doesn't directly control the address" = "\nADDRESS ALREADY USED\nDYN 地址仅供一次性使用\n\n重复使用会降低您和收件人的隐私，如果收件人无法直接控制地址，则可能导致资产丢失";
 
 /* No comment provided by engineer. */
 "\nnetwork fee +%@ (%@)" = "\n网络手续费+%1$@ (%2$@)";

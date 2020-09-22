@@ -96,7 +96,7 @@
 "Insufficient funds" = "กองทุนไม่เพียงพอ";
 
 /* No comment provided by engineer. */
-"Insufficient funds for Dash network fee" = "กองทุนเงินไม่เพียงพอสำหรับเครือข่ายของ CMN";
+"Insufficient funds for Dash network fee" = "กองทุนเงินไม่เพียงพอสำหรับเครือข่ายของ DYN";
 
 /* No comment provided by engineer. */
 "Internal Error" = "ข้อผิดพลาดภายใน";
