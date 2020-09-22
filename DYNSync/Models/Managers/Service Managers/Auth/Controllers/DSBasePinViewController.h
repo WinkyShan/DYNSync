@@ -15,7 +15,7 @@
 //  limitations under the License.
 //
 
-#import <CMNAlertController/DWAlertController.h>
+#import <DYNAlertController/DWAlertController.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
