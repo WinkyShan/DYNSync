@@ -9,14 +9,14 @@
 Pod::Spec.new do |s|
 
   s.name             = 'DYNSync'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'A short description of DYNSync.'
   s.description      = 'DYNSync'
 
   s.homepage         = 'https://github.com/WinkyShan/DYNSync.git-iOS.git'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'WinkyShan' => '2297971509@qq.com' }
-  s.source           = { :git => 'https://github.com/WinkyShan/DYNSync.git.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/WinkyShan/DYNSync.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
   
