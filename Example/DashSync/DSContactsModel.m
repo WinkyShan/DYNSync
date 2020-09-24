@@ -10,10 +10,10 @@
 
 #import <DYNSync/DashSync.h>
 #import <DYNSync/DSTransition.h>
-#import <ios-dpp/DSDAPObjectsFactory.h>
-#import <ios-dpp/DSSchemaObject.h>
-#import <ios-dpp/DSSchemaHashUtils.h>
-#import <DSJSONSchemaValidation/NSDictionary+DSJSONDeepMutableCopy.h>
+//#import <ios-dpp/DSDAPObjectsFactory.h>
+//#import <ios-dpp/DSSchemaObject.h>
+//#import <ios-dpp/DSSchemaHashUtils.h>
+//#import <DSJSONSchemaValidation/NSDictionary+DSJSONDeepMutableCopy.h>
 #import <TinyCborObjc/NSObject+DSCborEncoding.h>
 
 static NSString * const ContactsDAPId = @"9ae7bb6e437218d8be36b04843f63a135491c898ff22d1ead73c43e105cc2444";
@@ -90,30 +90,30 @@ NS_ASSUME_NONNULL_BEGIN
             return;
         }
         
-        NSMutableDictionary<NSString *, id> *contactObject = [DSDAPObjectsFactory createDAPObjectForTypeName:@"contact"];
-        contactObject[@"user"] = blockchainUser[@"regtxid"];
-        contactObject[@"username"] = username;
-        
-        NSMutableDictionary<NSString *, id> *me = [NSMutableDictionary dictionary];
-        me[@"id"] = strongSelf.blockchainUserData[@"regtxid"];
-        me[@"username"] = strongSelf.blockchainUser.username;
-        
-        contactObject[@"sender"] = me;
-        
-        [strongSelf sendDapObject:contactObject completion:^(BOOL success) {
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            if (!strongSelf) {
-                return;
-            }
-            
-            if (success) {
-                strongSelf.outgoingContactRequests = [strongSelf.outgoingContactRequests arrayByAddingObject:username];
-            }
-            
-            if (completion) {
-                completion(success);
-            }
-        }];
+//        NSMutableDictionary<NSString *, id> *contactObject = [DSDAPObjectsFactory createDAPObjectForTypeName:@"contact"];
+//        contactObject[@"user"] = blockchainUser[@"regtxid"];
+//        contactObject[@"username"] = username;
+//
+//        NSMutableDictionary<NSString *, id> *me = [NSMutableDictionary dictionary];
+//        me[@"id"] = strongSelf.blockchainUserData[@"regtxid"];
+//        me[@"username"] = strongSelf.blockchainUser.username;
+//
+//        contactObject[@"sender"] = me;
+//
+//        [strongSelf sendDapObject:contactObject completion:^(BOOL success) {
+//            __strong typeof(weakSelf) strongSelf = weakSelf;
+//            if (!strongSelf) {
+//                return;
+//            }
+//
+//            if (success) {
+//                strongSelf.outgoingContactRequests = [strongSelf.outgoingContactRequests arrayByAddingObject:username];
+//            }
+//
+//            if (completion) {
+//                completion(success);
+//            }
+//        }];
     }];
 }
 
@@ -149,84 +149,84 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Private
 
 - (void)createProfileWithCompletion:(void (^)(BOOL success))completion {
-    NSMutableDictionary<NSString *, id> *userObject = [DSDAPObjectsFactory createDAPObjectForTypeName:@"user"];
-    userObject[@"aboutme"] = [NSString stringWithFormat:@"Hey I'm a demo user %@", self.blockchainUser.username];
-    userObject[@"username"] = self.blockchainUser.username;
-    
-    __weak typeof(self) weakSelf = self;
-    [self sendDapObject:userObject completion:^(BOOL success) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        if (!strongSelf) {
-            return;
-        }
-
-        if (success) {
-            [strongSelf fetchBlockchainUserData:strongSelf.blockchainUser.username completion:^(NSDictionary * _Nullable blockchainUser) {
-                __strong typeof(weakSelf) strongSelf = weakSelf;
-                if (!strongSelf) {
-                    return;
-                }
-
-                strongSelf.blockchainUserData = blockchainUser;
-                
-                if (completion) {
-                    completion(!!blockchainUser);
-                }
-            }];
-        }
-        else {
-            if (completion) {
-                completion(NO);
-            }
-        }
-    }];
+//    NSMutableDictionary<NSString *, id> *userObject = [DSDAPObjectsFactory createDAPObjectForTypeName:@"user"];
+//    userObject[@"aboutme"] = [NSString stringWithFormat:@"Hey I'm a demo user %@", self.blockchainUser.username];
+//    userObject[@"username"] = self.blockchainUser.username;
+//
+//    __weak typeof(self) weakSelf = self;
+//    [self sendDapObject:userObject completion:^(BOOL success) {
+//        __strong typeof(weakSelf) strongSelf = weakSelf;
+//        if (!strongSelf) {
+//            return;
+//        }
+//
+//        if (success) {
+//            [strongSelf fetchBlockchainUserData:strongSelf.blockchainUser.username completion:^(NSDictionary * _Nullable blockchainUser) {
+//                __strong typeof(weakSelf) strongSelf = weakSelf;
+//                if (!strongSelf) {
+//                    return;
+//                }
+//
+//                strongSelf.blockchainUserData = blockchainUser;
+//
+//                if (completion) {
+//                    completion(!!blockchainUser);
+//                }
+//            }];
+//        }
+//        else {
+//            if (completion) {
+//                completion(NO);
+//            }
+//        }
+//    }];
 }
 
 - (void)sendDapObject:(NSMutableDictionary<NSString *, id> *)dapObject completion:(void (^)(BOOL success))completion {
-    NSMutableArray *dapObjects = [NSMutableArray array];
-    [dapObjects addObject:dapObject];
-    
-    NSMutableDictionary<NSString *, id> *stPacket = [[DSDAPObjectsFactory createSTPacketInstance] ds_deepMutableCopy];
-    NSMutableDictionary<NSString *, id> *stPacketObject = stPacket[DS_STPACKET];
-    stPacketObject[DS_DAPOBJECTS] = dapObjects;
-    stPacketObject[@"dapid"] = ContactsDAPId;
-    
-    NSData *serializedSTPacketObject = [stPacketObject ds_cborEncodedObject];
-    
-    __block NSData *serializedSTPacketObjectHash = [DSSchemaHashUtils hashOfObject:stPacketObject];
-    
-    __block DSTransition *transition = [self.blockchainUser transitionForStateTransitionPacketHash:serializedSTPacketObjectHash.UInt256];
-    
-    [self.blockchainUser signStateTransition:transition
-                                  withPrompt:@"" completion:^(BOOL success) {
-                                      if (success) {
-                                          NSData *transitionData = [transition toData];
-                                          
-                                          NSString *transitionDataHex = [transitionData hexString];
-                                          NSString *serializedSTPacketObjectHex = [serializedSTPacketObject hexString];
-                                          
-                                          [self.chainManager.DAPIClient sendRawTransitionWithRawTransitionHeader:transitionDataHex rawTransitionPacket:serializedSTPacketObjectHex success:^(NSString * _Nonnull headerId) {
-                                              NSLog(@"Header ID %@", headerId);
-                                              
-                                              [self.chainManager.chain registerSpecialTransaction:transition];
-                                              [transition save];
-                                              
-                                              if (completion) {
-                                                  completion(YES);
-                                              }
-                                          } failure:^(NSError * _Nonnull error) {
-                                              NSLog(@"Error: %@", error);
-                                              if (completion) {
-                                                  completion(NO);
-                                              }
-                                          }];
-                                      }
-                                      else {
-                                          if (completion) {
-                                              completion(NO);
-                                          }
-                                      }
-                                  }];
+//    NSMutableArray *dapObjects = [NSMutableArray array];
+//    [dapObjects addObject:dapObject];
+//
+//    NSMutableDictionary<NSString *, id> *stPacket = [[DSDAPObjectsFactory createSTPacketInstance] ds_deepMutableCopy];
+//    NSMutableDictionary<NSString *, id> *stPacketObject = stPacket[DS_STPACKET];
+//    stPacketObject[DS_DAPOBJECTS] = dapObjects;
+//    stPacketObject[@"dapid"] = ContactsDAPId;
+//
+//    NSData *serializedSTPacketObject = [stPacketObject ds_cborEncodedObject];
+//
+//    __block NSData *serializedSTPacketObjectHash = [DSSchemaHashUtils hashOfObject:stPacketObject];
+//
+//    __block DSTransition *transition = [self.blockchainUser transitionForStateTransitionPacketHash:serializedSTPacketObjectHash.UInt256];
+//
+//    [self.blockchainUser signStateTransition:transition
+//                                  withPrompt:@"" completion:^(BOOL success) {
+//                                      if (success) {
+//                                          NSData *transitionData = [transition toData];
+//
+//                                          NSString *transitionDataHex = [transitionData hexString];
+//                                          NSString *serializedSTPacketObjectHex = [serializedSTPacketObject hexString];
+//
+//                                          [self.chainManager.DAPIClient sendRawTransitionWithRawTransitionHeader:transitionDataHex rawTransitionPacket:serializedSTPacketObjectHex success:^(NSString * _Nonnull headerId) {
+//                                              NSLog(@"Header ID %@", headerId);
+//
+//                                              [self.chainManager.chain registerSpecialTransaction:transition];
+//                                              [transition save];
+//
+//                                              if (completion) {
+//                                                  completion(YES);
+//                                              }
+//                                          } failure:^(NSError * _Nonnull error) {
+//                                              NSLog(@"Error: %@", error);
+//                                              if (completion) {
+//                                                  completion(NO);
+//                                              }
+//                                          }];
+//                                      }
+//                                      else {
+//                                          if (completion) {
+//                                              completion(NO);
+//                                          }
+//                                      }
+//                                  }];
 }
 
 - (void)fetchBlockchainUserData:(NSString *)username completion:(void (^)(NSDictionary * _Nullable blockchainUser))completion {

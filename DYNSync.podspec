@@ -9,9 +9,10 @@
 Pod::Spec.new do |s|
 
   s.name             = 'DYNSync'
-  s.version          = '1.0.7'
+  s.version          = '1.0.8'
   s.summary          = 'A short description of DYNSync.'
   s.description      = 'DYNSync'
+			
 
   s.homepage         = 'https://github.com/WinkyShan/DYNSync.git'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

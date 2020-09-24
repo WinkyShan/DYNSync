@@ -5,7 +5,7 @@ PODS:
   - CocoaLumberjack/Core (3.6.0)
   - DSDynamicOptions (0.1.0)
   - DYNAlertController (1.0.0)
-  - DYNSync (1.0.0):
+  - DYNSync (1.0.7):
     - bls-signatures-pod (= 0.2.9)
     - CocoaLumberjack (= 3.6.0)
     - DSDynamicOptions (= 0.1.0)
@@ -53,7 +53,7 @@ SPEC CHECKSUMS:
   CocoaLumberjack: 78b0c238666f4f58db069738ec176f4519557516
   DSDynamicOptions: 6a37eb496daee3c067e086b5b236d77707e9a3ee
   DYNAlertController: bf387dc4674bc43ee847f62f334d28d23022903a
-  DYNSync: 44ad0ba75c3b69d9da7178bb4d4db3fb67595f21
+  DYNSync: 5bd62af5d13f2e07eed5e1cb1de5a2961f84478d
   ios-dpp: 7916cdb9203ee65fce156a914664f958ba1c77a5
   KVO-MVVM: 4df3afd1f7ebcb69735458b85db59c4271ada7c6
   secp256k1_dash: 7fdbc23e3e8a27d522ec211b874d97fb091c2b23
