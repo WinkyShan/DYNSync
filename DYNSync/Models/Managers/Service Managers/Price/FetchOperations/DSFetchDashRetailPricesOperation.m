@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //MARK - 修改本地货币价格获取链接
 //#define DASHRETAIL_TICKER_URL @"https://rates2.dashretail.org/rates?source=dashretail"
-#define DASHRETAIL_TICKER_URL @"https://api.dynechain.xyz/rate"
+#define DASHRETAIL_TICKER_URL @"https://api.dynechain.io/rate"
 
 @interface DSFetchDashRetailPricesOperation ()
 
@@ -70,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)priceSourceInfo {
      //MARK - 修改sorce
-        return @"dynechain.xyz";
+        return @"dynechain.io";
     //    return @"dashretail.org";
 }
 
