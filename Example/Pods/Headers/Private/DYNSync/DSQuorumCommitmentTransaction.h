@@ -1,1 +1,0 @@
-../../../../../DYNSync/Models/Transactions/Quorums/DSQuorumCommitmentTransaction.h

@@ -1,1 +1,0 @@
-../../../../../DYNSync/Models/Managers/Chain Managers/DSMasternodeManager+Protected.h

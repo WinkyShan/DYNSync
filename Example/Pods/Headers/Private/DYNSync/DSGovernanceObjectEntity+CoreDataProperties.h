@@ -1,1 +1,0 @@
-../../../../../DYNSync/Models/Entities/DSGovernanceObjectEntity+CoreDataProperties.h

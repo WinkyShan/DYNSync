@@ -1,1 +1,0 @@
-../../../../../DYNSync/Models/Entities/DSProviderUpdateServiceTransactionEntity+CoreDataProperties.h
